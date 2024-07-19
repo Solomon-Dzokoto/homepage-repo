@@ -1,0 +1,292 @@
+
+$-Dark-Gray: hsl(0, 0%, 63%);
+$--Black: hsl(0, 0%, 0%);
+$--White: hsl(0, 0%, 100%);
+$--Very-Dark: hsl(0, 0%, 27%);
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "League Spartan",arial;
+  font-size: 12px;
+  height: 100%;
+  width: 100%;
+
+  *{
+    padding: 0;
+    margin: 0;
+    text-decoration: 0;
+    color: $--Black;
+    box-sizing: border-box;
+    list-style: none;
+  }
+  .top-section{
+    height: 67vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 3fr 2.2fr;
+    position: relative;
+    .left{
+      background-image: url("images/desktop-image-hero-1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 3rem;
+      .sidebar{
+        display: none;
+      }
+      .header{
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+        .logo{
+        img{
+          width: 3.5rem;
+        }
+        }
+        .nav-items{
+          display: flex;
+          gap: 2rem;
+          a{
+            color:$--White ;
+            cursor: pointer;
+              position: relative;
+              transition: all 0.5s ease;
+              &:hover::after{
+                content: "";
+                position: absolute;
+                bottom:-0.5rem;
+                left: 20%;
+                height:0.1rem;
+                width: 60%;
+                background-color: $--White;
+                border-radius: 10px;
+              }
+            
+          }
+        }
+      }
+    }
+    .right{
+      padding: 5.5rem;
+      .manufactured,.available{
+        display: none;
+      }
+      div{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1.5rem;
+        h1{
+          font-size: 2rem;
+        }
+        p{
+          color:$-Dark-Gray ;
+          line-height: 1rem;
+        }
+        .shop-now{
+          display: flex;
+          flex-direction: row;
+          transition: all 0.5s ease;
+          cursor: pointer;
+          &:hover{
+            p{
+              color:$-Dark-Gray;
+            }
+            svg{
+              fill:$-Dark-Gray;
+            } 
+          }
+          p{
+           letter-spacing: 0.5rem;
+           text-transform: uppercase;
+           color:$--Black ;
+           cursor: pointer;
+          }
+        }
+        }
+    }
+    .slide{
+      position: absolute;
+      bottom: 0;
+      right: 23.6rem;
+      display:flex;
+     width: 12.3%;
+     flex-direction: row;
+     gap: 0;
+      .left-slide,.right-slide{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       background-color:$--Black;
+       width: 50%;
+       cursor: pointer;
+       &:hover{
+        background-color: $--Very-Dark;
+       }
+     }
+    }
+  }
+  .bottom-section{
+    height: 33vh;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1.5fr;
+    .left{
+      background-image: url("images/image-about-dark.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .right{
+      background-image: url("images/image-about-light.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .our{display: grid;
+      gap: 1rem;
+      padding: 3rem ;
+      h3{
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing:0.2rem;
+      }
+      p{
+        color: $-Dark-Gray;
+        line-height: 1rem;
+      }
+    }
+  }
+}
+@media screen and (max-width:1024px){
+.top-section{
+  box-sizing: border-box;
+  height: 50%;
+grid-template-columns: 1.5fr 1fr;
+.left{
+background-size: contain;
+width: 100%;
+box-sizing: border-box;
+}
+
+}
+.bottom-section{
+  box-sizing: border-box;
+  grid-template-columns: 1fr 1.8 1fr;
+  height: fit-content;
+  .middle{
+    box-sizing: border-box;
+  }
+  .left,.right{
+    background-size: contain; 
+  }
+}
+}
+
+@media screen and (max-width:500px){
+body{
+ display: grid;
+ .top-section{
+ display: grid;
+ grid-template-columns: 1fr;
+ height: 100%;
+  .left{
+    background-image:url("images/mobile-image-hero-1.jpg") ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    width: 100vw;
+    height: 80vh;
+    margin-bottom: 0;
+   .header{
+  display: none;
+  }
+  .sidebar{
+    display: flex;
+ 
+   
+    .open{
+    margin-right: 8rem;
+    margin-left: 1rem;
+    cursor: pointer;
+
+    }
+    .close{
+      cursor: pointer;
+    }
+    .logo{
+     display: flex;
+     justify-content: center;
+    }
+    .nav-items{
+      position: fixed;
+      top: 0;
+      right:0;
+      height: 8rem;
+      background: white;
+      width: 100%;
+      display: none;
+      gap: 2rem;
+      align-items: center;
+      justify-content: end;
+      box-shadow: 0 0 5px $-Dark-Gray;
+      img{
+        margin-right: 5.5rem;
+      }
+      a{
+        font-size: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+  }
+ .right{
+  padding: 0 3rem;
+ margin-bottom:2rem ;
+ h1{
+  font-weight: 700;
+ }
+
+p{
+  line-height: 1.5rem;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+.shop-now{
+  margin-top: 1.5rem;
+}
+ }
+ .slide{
+right: 0;
+bottom:58.3%;
+width:8rem;
+ }
+ }
+.bottom-section{
+grid-template-columns: 1fr;
+.left{
+  height: 40vh;
+  background-size: cover;
+  background-position: top;
+}
+.right{
+  height: 40vh;
+  background-size: cover;
+}
+.middle{
+  height: 80vh;
+  .our{
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+h3{
+  font-weight: 500;
+}
+p{
+  line-height: 1.2rem;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+  }
+}
+}
+}
+}
+
